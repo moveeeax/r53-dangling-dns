@@ -1,0 +1,16 @@
+# Built binary (anchored to repo root so it never shadows a cmd/ source dir)
+/r53-dangling-dns
+/dist/
+*.exe
+
+# Go
+/vendor/
+
+# Local scan output
+*.sarif
+findings.json
+
+# Keep committed fixtures under examples/ and testdata/
+!examples/*.sarif
+!examples/findings.json
+!testdata/**

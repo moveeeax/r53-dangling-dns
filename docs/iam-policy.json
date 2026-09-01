@@ -1,0 +1,19 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "R53DanglingReadOnly",
+      "Effect": "Allow",
+      "Action": [
+        "route53:ListHostedZones",
+        "route53:ListResourceRecordSets",
+        "elasticloadbalancing:DescribeLoadBalancers",
+        "cloudfront:ListDistributions",
+        "s3:ListAllMyBuckets",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeInstances"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

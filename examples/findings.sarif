@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "r53-dangling-dns",
+          "informationUri": "https://github.com/moveeeax/r53-dangling-dns",
+          "rules": [
+            {
+              "id": "dangling-dns",
+              "name": "DanglingDNSRecord"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "dangling-dns",
+          "level": "error",
+          "message": {
+            "text": "CNAME docs.example.com -\u003e deleted-docs.s3-website-us-east-1.amazonaws.com (s3): no S3 bucket named deleted-docs in the account"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "route53/example.com"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "dangling-dns",
+          "level": "error",
+          "message": {
+            "text": "CNAME legacy.example.com -\u003e old-lb-9.us-east-1.elb.amazonaws.com (elb): no load balancer with this DNS name in the account"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "route53/example.com"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "dangling-dns",
+          "level": "warning",
+          "message": {
+            "text": "A vpn.example.com -\u003e 198.51.100.7 (ip): address not found among account EIPs/instance IPs; verify it is still yours"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "route53/example.com"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

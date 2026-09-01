@@ -1,0 +1,55 @@
+{
+  "summary": {
+    "ok": 2,
+    "suspicious": 1,
+    "dangling": 2,
+    "total": 5
+  },
+  "findings": [
+    {
+      "name": "docs.example.com",
+      "type": "CNAME",
+      "target": "deleted-docs.s3-website-us-east-1.amazonaws.com",
+      "zone": "example.com",
+      "kind": "s3",
+      "severity": "dangling",
+      "reason": "no S3 bucket named deleted-docs in the account"
+    },
+    {
+      "name": "legacy.example.com",
+      "type": "CNAME",
+      "target": "old-lb-9.us-east-1.elb.amazonaws.com",
+      "zone": "example.com",
+      "kind": "elb",
+      "severity": "dangling",
+      "reason": "no load balancer with this DNS name in the account"
+    },
+    {
+      "name": "vpn.example.com",
+      "type": "A",
+      "target": "198.51.100.7",
+      "zone": "example.com",
+      "kind": "ip",
+      "severity": "suspicious",
+      "reason": "address not found among account EIPs/instance IPs; verify it is still yours"
+    },
+    {
+      "name": "app.example.com",
+      "type": "A",
+      "target": "prod-alb-1.us-east-1.elb.amazonaws.com",
+      "zone": "example.com",
+      "kind": "elb",
+      "severity": "ok",
+      "reason": "load balancer exists"
+    },
+    {
+      "name": "www.example.com",
+      "type": "CNAME",
+      "target": "marketing-site.s3-website.us-east-1.amazonaws.com",
+      "zone": "example.com",
+      "kind": "s3",
+      "severity": "ok",
+      "reason": "bucket marketing-site exists"
+    }
+  ]
+}
