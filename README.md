@@ -1,7 +1,7 @@
 # r53-dangling-dns
 
 [![ci](https://github.com/moveeeax/r53-dangling-dns/actions/workflows/ci.yml/badge.svg)](https://github.com/moveeeax/r53-dangling-dns/actions/workflows/ci.yml)
-[![Go](https://img.shields.io/badge/go-1.22%2B-00ADD8?logo=go)](https://go.dev)
+[![Go](https://img.shields.io/badge/go-1.26%2B-00ADD8?logo=go)](https://go.dev)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 Find Route53 records that point at AWS resources you already deleted — before an
